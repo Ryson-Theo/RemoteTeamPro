@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Register — RemoteTeamPro</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="min-h-screen bg-gray-900 text-gray-100 flex items-center justify-center">
+  <div class="max-w-xl w-full p-8 bg-gray-800/70 rounded-xl shadow-lg">
+    <h1 class="text-3xl font-bold mb-4">Register for RemoteTeamPro</h1>
+    <p class="mb-4 text-gray-300">This application requires a PHP backend to process registrations. If you're running the full app locally, click the button below to open the local registration page.</p>
+
+    <div class="space-y-4">
+      <a href="http://localhost/RemoteTeamPro/backend/auth/register.php" class="inline-block w-full text-center px-6 py-3 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700">Open Local Registration</a>
+      <p class="text-sm text-gray-400">If you don't have the backend running locally, registration won't work from GitHub Pages. To run locally, install the project and start your PHP server (XAMPP) and database.</p>
+      <a href="index.html" class="inline-block mt-3 text-sm text-purple-300 hover:underline">Back to Home</a>
+    </div>
+
+    <hr class="my-6 border-gray-700">
+
+    <h2 class="text-xl font-semibold mb-2">Quick manual</h2>
+    <ol class="list-decimal list-inside text-gray-300 text-sm space-y-1">
+      <li>Clone the repo locally.</li>
+      <li>Import <span class="font-mono">database/schema.sql</span> into MySQL.</li>
+      <li>Place the project in your webserver's document root (e.g., <span class="font-mono">C:/xampp/htdocs/RemoteTeamPro</span>).</li>
+      <li>Start XAMPP (Apache + MySQL) and open the local registration link above.</li>
+    </ol>
+  </div>
+</body>
+</html>
