@@ -24,7 +24,7 @@
       letter-spacing="0"
       xml:space="preserve"
     >
- <text x="18" y="42">88888888ba                                                             888888888888                                         88888888ba</text>
+<text x="18" y="42">88888888ba                                                             888888888888                                         88888888ba</text>
 <text x="18" y="61">88      "8b                                               ,d                88                                              88      "8b</text>
 <text x="18" y="80">88      ,8P                                               88                88                                              88      ,8P</text>
 <text x="18" y="99">88aaaaaa8P'  ,adPPYba,  88,dPYba,,adPYba,    ,adPPYba,  MM88MMM  ,adPPYba,  88   ,adPPYba,  ,adPPYYba,  88,dPYba,,adPYba,   88aaaaaa8P'  8b,dPPYba,   ,adPPYba,</text>
@@ -32,7 +32,6 @@
 <text x="18" y="137">88    `8b   8PP"""""""  88      88      88  8b       d8   88    8PP"""""""  88  8PP"""""""  ,adPPPPP88  88      88      88  88           88          8b       d8</text>
 <text x="18" y="156">88     `8b  "8b,   ,aa  88      88      88  "8a,   ,a8"   88,   "8b,   ,aa  88  "8b,   ,aa  88,    ,88  88      88      88  88           88          "8a,   ,a8"</text>
 <text x="18" y="175">88      `8b  `"Ybbd8"'  88      88      88   `"YbbdP"'    "Y888  `"Ybbd8"'  88   `"Ybbd8"'  `"8bbdP"Y8  88      88      88  88           88           `"YbbdP"'</text>
-
 
     </g>
 
