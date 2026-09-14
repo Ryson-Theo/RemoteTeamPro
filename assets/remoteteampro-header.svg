@@ -3,7 +3,59 @@
      height="300"
      viewBox="0 0 1800 300">
 
+  <defs>
+
+    <!-- Purple ambient gradient moving across the text -->
+    <linearGradient id="ambientPurple"
+                    x1="-500"
+                    y1="0"
+                    x2="500"
+                    y2="0"
+                    gradientUnits="userSpaceOnUse">
+
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="35%"  stop-color="#ffffff"/>
+      <stop offset="48%"  stop-color="#b86cff"/>
+      <stop offset="50%"  stop-color="#e0b3ff"/>
+      <stop offset="52%"  stop-color="#b86cff"/>
+      <stop offset="65%"  stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+
+      <animate
+        attributeName="x1"
+        values="-600;1800;-600"
+        dur="10s"
+        repeatCount="indefinite"/>
+
+      <animate
+        attributeName="x2"
+        values="0;2400;0"
+        dur="10s"
+        repeatCount="indefinite"/>
+
+    </linearGradient>
+
+    <!-- Soft purple glow -->
+    <filter id="textGlow"
+            x="-30%"
+            y="-100%"
+            width="160%"
+            height="300%">
+
+      <feGaussianBlur
+        stdDeviation="5"
+        result="blur"/>
+
+    </filter>
+
+  </defs>
+
   <rect width="1800" height="300" fill="#000"/>
+
+
+  <!-- ================================= -->
+  <!-- SOFT PURPLE GLOW ON THE TEXT -->
+  <!-- ================================= -->
 
   <text
     x="0"
@@ -14,7 +66,10 @@
     font-weight="400"
     letter-spacing="0"
     word-spacing="0"
-    fill="#fff">
+    font-variant-ligatures="none"
+    fill="url(#ambientPurple)"
+    opacity="0.65"
+    filter="url(#textGlow)">
 
     <tspan x="0" dy="0">                                                                                                                                  </tspan>
     <tspan x="0" dy="24"> mmmmmm                                                      mmmmmmmm                                mmmmmm                       </tspan>
@@ -24,8 +79,35 @@
     <tspan x="0" dy="24"> ##  "##m  ##""""""  ## ## ##  ##    ##    ##      ##""""""     ##     ##""""""  m##"""##  ## ## ##  ##         ##       ##    ## </tspan>
     <tspan x="0" dy="24"> ##    ##  "##mmmm#  ## ## ##  "##mm##"    ##mmm   "##mmmm#     ##     "##mmmm#  ##mmm###  ## ## ##  ##         ##       "##mm##" </tspan>
     <tspan x="0" dy="24"> ""    """   """""   "" "" ""    """"       """"     """""      ""       """""    """" ""  "" "" ""  ""         ""         """"   </tspan>
-    <tspan x="0" dy="24">                                                                                                                                  </tspan>
-    <tspan x="0" dy="24">                                                                                                                                  </tspan>
 
   </text>
+
+
+  <!-- ================================= -->
+  <!-- SHARP TEXT -->
+  <!-- ================================= -->
+
+  <text
+    x="0"
+    y="45"
+    xml:space="preserve"
+    font-family="DejaVu Sans Mono, Consolas, 'Courier New', monospace"
+    font-size="20"
+    font-weight="400"
+    letter-spacing="0"
+    word-spacing="0"
+    font-variant-ligatures="none"
+    fill="url(#ambientPurple)">
+
+    <tspan x="0" dy="0">                                                                                                                                  </tspan>
+    <tspan x="0" dy="24"> mmmmmm                                                      mmmmmmmm                                mmmmmm                       </tspan>
+    <tspan x="0" dy="24"> ##""""##                                  ##                """##"""                                ##""""#m                     </tspan>
+    <tspan x="0" dy="24"> ##    ##   m####m   ####m##m   m####m   #######    m####m      ##      m####m    m#####m  ####m##m  ##    ##   ##m####   m####m  </tspan>
+    <tspan x="0" dy="24"> #######   ##mmmm##  ## ## ##  ##"  "##    ##      ##mmmm##     ##     ##mmmm##   " mmm##  ## ## ##  ######"    ##"      ##"  "## </tspan>
+    <tspan x="0" dy="24"> ##  "##m  ##""""""  ## ## ##  ##    ##    ##      ##""""""     ##     ##""""""  m##"""##  ## ## ##  ##         ##       ##    ## </tspan>
+    <tspan x="0" dy="24"> ##    ##  "##mmmm#  ## ## ##  "##mm##"    ##mmm   "##mmmm#     ##     "##mmmm#  ##mmm###  ## ## ##  ##         ##       "##mm##" </tspan>
+    <tspan x="0" dy="24"> ""    """   """""   "" "" ""    """"       """"     """""      ""       """""    """" ""  "" "" ""  ""         ""         """"   </tspan>
+
+  </text>
+
 </svg>
