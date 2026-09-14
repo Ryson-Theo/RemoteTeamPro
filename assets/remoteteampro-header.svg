@@ -1,124 +1,49 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="1356"
-  height="212"
-  viewBox="0 0 1356 212"
-  role="img"
-  aria-labelledby="title desc"
->
-  <title id="title">RemoteTeamPro</title>
-  <desc id="desc">RemoteTeamPro ASCII terminal logo with animated purple light sweep</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="160" viewBox="0 0 900 160" role="img">
+  <title>RemoteTeamPro</title>
+  <desc>RemoteTeamPro terminal logo with animated purple light sweep</desc>
 
   <defs>
+    <!-- Import Manrope from Google Fonts (works when opened in a browser) -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&amp;display=swap');
+    </style>
 
-    <!-- =========================================================
-         REMOTE TEAM PRO — ASCII BLOCK DESIGN
-         Fixed monospace layout
-         ========================================================= -->
-
-    <g
-      id="ascii"
-      font-family="Courier New, Consolas, 'Liberation Mono', monospace"
-      font-size="17px"
-      font-weight="700"
-      letter-spacing="0"
-      xml:space="preserve"
-    >
-<text x="18" y="42">88888888ba                                                             888888888888                                         88888888ba</text>
-<text x="18" y="61">88      "8b                                               ,d                88                                              88      "8b</text>
-<text x="18" y="80">88      ,8P                                               88                88                                              88      ,8P</text>
-<text x="18" y="99">88aaaaaa8P'  ,adPPYba,  88,dPYba,,adPYba,    ,adPPYba,  MM88MMM  ,adPPYba,  88   ,adPPYba,  ,adPPYYba,  88,dPYba,,adPYba,   88aaaaaa8P'  8b,dPPYba,   ,adPPYba,</text>
-<text x="18" y="118">88""""88'   a8P_____88  88P'   "88"    "8a  a8"     "8a   88    a8P_____88  88  a8P_____88  ""     `Y8  88P'   "88"    "8a  88""""""'    88P'   "Y8  a8"     "8a</text>
-<text x="18" y="137">88    `8b   8PP"""""""  88      88      88  8b       d8   88    8PP"""""""  88  8PP"""""""  ,adPPPPP88  88      88      88  88           88          8b       d8</text>
-<text x="18" y="156">88     `8b  "8b,   ,aa  88      88      88  "8a,   ,a8"   88,   "8b,   ,aa  88  "8b,   ,aa  88,    ,88  88      88      88  88           88          "8a,   ,a8"</text>
-<text x="18" y="175">88      `8b  `"Ybbd8"'  88      88      88   `"YbbdP"'    "Y888  `"Ybbd8"'  88   `"Ybbd8"'  `"8bbdP"Y8  88      88      88  88           88           `"YbbdP"'</text>
-
-    </g>
-
-
-    <!-- =========================================================
-         MASK — EXACT SAME ASCII GEOMETRY
-         ========================================================= -->
-
-    <mask
-      id="asciiMask"
-      maskUnits="userSpaceOnUse"
-      x="0"
-      y="0"
-      width="1356"
-      height="212"
-    >
-      <rect
-        x="0"
-        y="0"
-        width="1356"
-        height="212"
-        fill="black"
-      />
-
-      <use
-        href="#ascii"
-        fill="white"
-      />
-    </mask>
-
-
-    <!-- =========================================================
-         PURPLE TERMINAL LIGHT SWEEP
-         ========================================================= -->
-
-    <linearGradient
-      id="sweep"
-      gradientUnits="userSpaceOnUse"
-      x1="0"
-      y1="0"
-      x2="420"
-      y2="0"
-    >
+    <!-- Purple terminal light sweep gradient -->
+    <linearGradient id="sweep" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="500" y2="0">
       <stop offset="0%"   stop-color="#7C3AED"/>
-      <stop offset="38%"  stop-color="#7C3AED"/>
-      <stop offset="47%"  stop-color="#A78BFA"/>
+      <stop offset="35%"  stop-color="#7C3AED"/>
+      <stop offset="45%"  stop-color="#A78BFA"/>
       <stop offset="50%"  stop-color="#FFFFFF"/>
-      <stop offset="53%"  stop-color="#C4B5FD"/>
-      <stop offset="62%"  stop-color="#7C3AED"/>
+      <stop offset="55%"  stop-color="#C4B5FD"/>
+      <stop offset="65%"  stop-color="#7C3AED"/>
       <stop offset="100%" stop-color="#7C3AED"/>
     </linearGradient>
 
+    <!-- Mask: only show the sweep over the text itself -->
+    <mask id="textMask" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="160">
+      <rect x="0" y="0" width="900" height="160" fill="black"/>
+      <text x="450" y="95"
+            font-family="Manrope, 'Segoe UI', Arial, sans-serif"
+            font-size="64" font-weight="800" letter-spacing="2"
+            text-anchor="middle" fill="white">RemoteTeamPro</text>
+    </mask>
   </defs>
 
+  <!-- Base text -->
+  <text x="450" y="95"
+        font-family="Manrope, 'Segoe UI', Arial, sans-serif"
+        font-size="64" font-weight="800" letter-spacing="2"
+        text-anchor="middle" fill="#A78BFA">RemoteTeamPro</text>
 
-  <!-- =========================================================
-       BASE ASCII
-       ========================================================= -->
-
-  <use
-    href="#ascii"
-    fill="#A78BFA"
-  />
-
-
-  <!-- =========================================================
-       ANIMATED LIGHT PASS
-       ========================================================= -->
-
-  <g mask="url(#asciiMask)">
-
-    <rect
-      x="-420"
-      y="0"
-      width="420"
-      height="212"
-      fill="url(#sweep)"
-    >
-      <animate
-        attributeName="x"
-        from="-420"
-        to="1356"
-        dur="4.2s"
-        repeatCount="indefinite"
-      />
+  <!-- Animated purple light pass -->
+  <g mask="url(#textMask)">
+    <rect x="-500" y="0" width="500" height="160" fill="url(#sweep)">
+      <animate attributeName="x" from="-500" to="900" dur="4.2s" repeatCount="indefinite"/>
     </rect>
-
   </g>
 
+  <!-- Terminal underscore cursor (blinking) -->
+  <rect x="810" y="105" width="28" height="8" fill="#A78BFA">
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
 </svg>
