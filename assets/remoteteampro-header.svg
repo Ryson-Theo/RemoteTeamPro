@@ -1,1 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1800"
+     height="300"
+     viewBox="0 0 1800 300">
 
+  <defs>
+
+    <!-- Slow purple ambient sweep -->
+    <linearGradient id="purpleAmbient"
+                    x1="-500"
+                    y1="0"
+                    x2="0"
+                    y2="0"
+                    gradientUnits="userSpaceOnUse">
+
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="38%"  stop-color="#ffffff"/>
+      <stop offset="48%"  stop-color="#a855f7"/>
+      <stop offset="50%"  stop-color="#e9d5ff"/>
+      <stop offset="52%"  stop-color="#a855f7"/>
+      <stop offset="62%"  stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+
+      <animate
+        attributeName="x1"
+        values="-700;1800;-700"
+        dur="12s"
+        repeatCount="indefinite"/>
+
+      <animate
+        attributeName="x2"
+        values="-100;2400;-100"
+        dur="12s"
+        repeatCount="indefinite"/>
+
+    </linearGradient>
+
+    <!-- Soft glow -->
+    <filter id="purpleGlow"
+            x="-30%"
+            y="-100%"
+            width="160%"
+            height="300%">
+
+      <feGaussianBlur stdDeviation="5"/>
+
+    </filter>
+
+  </defs>
+
+
+  <!-- Soft ambient glow behind the characters -->
+  <g
+    transform="translate(0, 12)"
+    opacity="0.55"
+    filter="url(#purpleGlow)">
+
+    <text
+      x="50%"
+      y="45"
+      text-anchor="middle"
+      xml:space="preserve"
+      font-family="DejaVu Sans Mono, Consolas, 'Courier New', monospace"
+      font-size="20"
+      font-weight="400"
+      letter-spacing="0"
+      word-spacing="0"
+      font-variant-ligatures="none"
+      fill="url(#purpleAmbient)">
+
+      <tspan x="50%" dy="0">                                                                                                                                  </tspan>
+      <tspan x="50%" dy="24"> mmmmmm                                                      mmmmmmmm                                mmmmmm                       </tspan>
+      <tspan x="50%" dy="24"> ##""""##                                  ##                """##"""                                ##""""#m                     </tspan>
+      <tspan x="50%" dy="24"> ##    ##   m####m   ####m##m   m####m   #######    m####m      ##      m####m    m#####m  ####m##m  ##    ##   ##m####   m####m  </tspan>
+      <tspan x="50%" dy="24"> #######   ##mmmm##  ## ## ##  ##"  "##    ##      ##mmmm##     ##     ##mmmm##   " mmm##  ## ## ##  ######"    ##"      ##"  "## </tspan>
+      <tspan x="50%" dy="24"> ##  "##m  ##""""""  ## ## ##  ##    ##    ##      ##""""""     ##     ##""""""  m##"""##  ## ## ##  ##         ##       ##    ## </tspan>
+      <tspan x="50%" dy="24"> ##    ##  "##mmmm#  ## ## ##  "##mm##"    ##mmm   "##mmmm#     ##     "##mmmm#  ##mmm###  ## ## ##  ##         ##       "##mm##" </tspan>
+      <tspan x="50%" dy="24"> ""    """   """""   "" "" ""    """"       """"     """""      ""       """""    """" ""  "" "" ""  ""         ""         """"   </tspan>
+
+    </text>
+
+  </g>
+
+
+  <!-- Crisp main text -->
+  <text
+    x="50%"
+    y="57"
+    text-anchor="middle"
+    xml:space="preserve"
+    font-family="DejaVu Sans Mono, Consolas, 'Courier New', monospace"
+    font-size="20"
+    font-weight="400"
+    letter-spacing="0"
+    word-spacing="0"
+    font-variant-ligatures="none"
+    fill="url(#purpleAmbient)">
+
+    <tspan x="50%" dy="0">                                                                                                                                  </tspan>
+    <tspan x="50%" dy="24"> mmmmmm                                                      mmmmmmmm                                mmmmmm                       </tspan>
+    <tspan x="50%" dy="24"> ##""""##                                  ##                """##"""                                ##""""#m                     </tspan>
+    <tspan x="50%" dy="24"> ##    ##   m####m   ####m##m   m####m   #######    m####m      ##      m####m    m#####m  ####m##m  ##    ##   ##m####   m####m  </tspan>
+    <tspan x="50%" dy="24"> #######   ##mmmm##  ## ## ##  ##"  "##    ##      ##mmmm##     ##     ##mmmm##   " mmm##  ## ## ##  ######"    ##"      ##"  "## </tspan>
+    <tspan x="50%" dy="24"> ##  "##m  ##""""""  ## ## ##  ##    ##    ##      ##""""""     ##     ##""""""  m##"""##  ## ## ##  ##         ##       ##    ## </tspan>
+    <tspan x="50%" dy="24"> ##    ##  "##mmmm#  ## ## ##  "##mm##"    ##mmm   "##mmmm#     ##     "##mmmm#  ##mmm###  ## ## ##  ##         ##       "##mm##" </tspan>
+    <tspan x="50%" dy="24"> ""    """   """""   "" "" ""    """"       """"     """""      ""       """""    """" ""  "" "" ""  ""         ""         """"   </tspan>
+
+  </text>
+
+</svg>
