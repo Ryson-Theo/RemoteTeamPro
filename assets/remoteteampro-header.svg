@@ -1,49 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="160" viewBox="0 0 900 160" role="img">
-  <title>RemoteTeamPro</title>
-  <desc>RemoteTeamPro terminal logo with animated purple light sweep</desc>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1600"
+     height="500"
+     viewBox="0 0 1600 500">
 
-  <defs>
-    <!-- Import Manrope from Google Fonts (works when opened in a browser) -->
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&amp;display=swap');
-    </style>
+  <rect width="100%" height="100%" fill="#000"/>
 
-    <!-- Purple terminal light sweep gradient -->
-    <linearGradient id="sweep" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="500" y2="0">
-      <stop offset="0%"   stop-color="#7C3AED"/>
-      <stop offset="35%"  stop-color="#7C3AED"/>
-      <stop offset="45%"  stop-color="#A78BFA"/>
-      <stop offset="50%"  stop-color="#FFFFFF"/>
-      <stop offset="55%"  stop-color="#C4B5FD"/>
-      <stop offset="65%"  stop-color="#7C3AED"/>
-      <stop offset="100%" stop-color="#7C3AED"/>
-    </linearGradient>
+  <text
+    x="0"
+    y="32"
+    xml:space="preserve"
+    font-family="DejaVu Sans Mono, Consolas, Courier New, monospace"
+    font-size="12px"
+    font-weight="400"
+    letter-spacing="0"
+    font-variant-ligatures="none"
+    fill="#ffffff">
 
-    <!-- Mask: only show the sweep over the text itself -->
-    <mask id="textMask" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="160">
-      <rect x="0" y="0" width="900" height="160" fill="black"/>
-      <text x="450" y="95"
-            font-family="Manrope, 'Segoe UI', Arial, sans-serif"
-            font-size="64" font-weight="800" letter-spacing="2"
-            text-anchor="middle" fill="white">RemoteTeamPro</text>
-    </mask>
-  </defs>
+    <tspan x="0" dy="0">▐▀▀▀▀▀▀▀▀▀█▄▄   ▐▀▀▀▀▀▀▀▀▀▀▀▀█▀▄                ▄██     ▀▀▀▀▀▀▀▀▀▀    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▐▀▀▀▀▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▐▀▀▀▀▀▀▀▀▀▀▀▀█     ▄▄███▄▄     ▀▄                ▄██▐▀▀▀▀▀▀▀▀▀█▄▄   ▐▀▀▀▀▀▀▀▀▀█▄▄        ▀▀▀▀▀▀▀▀▀▀</tspan>
 
-  <!-- Base text -->
-  <text x="450" y="95"
-        font-family="Manrope, 'Segoe UI', Arial, sans-serif"
-        font-size="64" font-weight="800" letter-spacing="2"
-        text-anchor="middle" fill="#A78BFA">RemoteTeamPro</text>
+    <tspan x="0" dy="14">▐ ████████████▄ ▐ ████████████▄ ▀▄            ▄█▀▄█  ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▐ ████████████▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▐ ████████████   ▄█▀▄▄▄▄▄██▄   ▄ ▀▄            ▄█▀▄█▐ ████████████▄ ▐ ████████████▄   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</tspan>
 
-  <!-- Animated purple light pass -->
-  <g mask="url(#textMask)">
-    <rect x="-500" y="0" width="500" height="160" fill="url(#sweep)">
-      <animate attributeName="x" from="-500" to="900" dur="4.2s" repeatCount="indefinite"/>
-    </rect>
-  </g>
+    <tspan x="0" dy="14"> ▀▀▀▀▀▀▀▀█▀████▌▐ ████▀▀▀▀▀▀▀▀ ▀▄ ▀▄        ▄█▀▄███ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▐ ████▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▐ ████▀▀▀▀▀▀▀▀  █▀▄██████████   ▀▄ ▀▄        ▄█▀▄███▐▀▀▀▀▀▀▀▀█▀████▌ ▀▀▀▀▀▀▀▀█▀████▌ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</tspan>
 
-  <!-- Terminal underscore cursor (blinking) -->
-  <rect x="810" y="105" width="28" height="8" fill="#A78BFA">
-    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/>
-  </rect>
+    <tspan x="0" dy="14">▐ █ █ ▄▄▄█ ████▌▐ ████▄▄▄▄▄▄▄▄▀▄ ▀▄ ▀▄    ▄█▀▄█████▐█▀▀▀▀█▀ ▀▀ ▀██████▀▀▀▀ █▀▀▀▀█ ▀▀▀▐ ████▄▄▄▄▄▄▄▄▀▀▀▀ █▀▀▀▀█ ▀▀▀▐ ████▄▄▄▄▄▄▄▄ ▐▌▐███████████▌ ▀▄ ▀▄ ▀▄    ▄█▀▄█████▐ █ █ ▄▄▄█ ████▌▐ █ █ ▄▄▄█ ████▌▐█▀▀▀▀█▀ ▀▀ ▀██████</tspan>
+
+    <tspan x="0" dy="14">▐ █ █ ██▄▄████▀ ▐ ████▄▄▄▄▄▄▄█  ▀▄ ▀▄ ▀▄ ▀█▄▀██████▐█ ████      █ ████     █ ████    ▐ ████▄▄▄▄▄▄▄█     █ ████    ▐ ████▄▄▄▄▄▄▄█ █ ████▀  ▀▀▀▀▀▀   ▀▄ ▀▄ ▀▄ ▀█▄▀██████▐ █ █ ██▄▄████▀ ▐ █ █ ██▄▄████▀ ▐█ ████      █ ████</tspan>
+
+    <tspan x="0" dy="14">▐ █ █ ██████▀   ▐ ████████████▐█▄ ▀▄ ▀▄ ▀▄ ▀█▄▀████▐█ ████      █ ████     █ ████    ▐ ████████████     █ ████    ▐ ████████████▐▌▐███▌ ▀▀▀▀▀▀▀▀ ▐█▄ ▀▄ ▀▄ ▀▄ ▀█▄▀████▐ █ █ ██████▀ ▄ ▐ █ █ ██████▀   ▐█ ████      █ ████</tspan>
+
+    <tspan x="0" dy="14">▐ █ █ ▀█▄▀███▄  ▐▄████        ▐ ██▄ ▀▄ ▀▄ ▀▄ █ ████▐█ ████▄    ▄█ ████     █ ████    ▐▄████             █ ████    ▐▄████        █ ████ ▀▀▀▀▀▀▀▀▀▀▐ ██▄ ▀▄ ▀▄ ▀▄ █ ████▐ █ █ ▀▀▀▀▀ ▄▀  ▐ █ █ ▀█▄▀███▄  ▐█ ████▄    ▄█ ████</tspan>
+
+    <tspan x="0" dy="14">▐ █ █ ▄ ▀█ ███▄ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▐ ████  ▀▄ ▀▄▄ █ ████ █▄▀█████████▄█████     █ ████    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄     █ ████    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ████ ▀▀▀▀▀▀▀▀▀▀▐ ████  ▀▄ ▀▄▄ █ ████▐ █ █ ▀▀▀▀▀▀    ▐ █ █ ▄ ▀█ ███▄  █▄▀█████████▄█████</tspan>
+
+    <tspan x="0" dy="14">▐ █ █  ▀▄▐█ ████▄▄▄▄▄▄▄▄▄▄▄▄▄▄▐ ████ ▀▄ ▀ ▄  █ ████  ▀█▄▀▀██████████▀      █ ████    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄     █ ████    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ ████ ▀▀▀ █▀████▐ ████ ▀▄ ▀ ▄  █ ████▐ █ █           ▐ █ █  ▀▄▐█ ████  ▀█▄▀▀██████████▀</tspan>
+
+    <tspan x="0" dy="14">▐ █ █   █ █▄████▄▄▄▄▄▄▄▄▄▄▄▄▄▄▐▄████   ▀▀    █▄████ ▀▄ ▀▀████████▀▀ ▄▀     █▄████    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄     █▄████    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄█▄████     █▄████▐▄████   ▀▀    █▄████▐ █ █           ▐ █ █   █ █▄████ ▀▄ ▀▀████████▀▀ ▄▀</tspan>
+
+    <tspan x="0" dy="14">▄ ▄ ▄   ▀▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄         ▄▄▄▄▄▄   ▀▀▄▄▄▄▄▄▄▄▄▄▀▀       ▄▄▄▄▄▄    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄     ▄▄▄▄▄▄    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄     ▄▄▄▄▄▄▄▄▄▄▄▄         ▄▄▄▄▄▄▄ ▄ ▄           ▄ ▄ ▄   ▀▄▄▄▄▄▄▄   ▀▀▄▄▄▄▄▄▄▄▄▄▀▀</tspan>
+
+  </text>
 </svg>
