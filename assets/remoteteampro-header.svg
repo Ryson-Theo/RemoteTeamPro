@@ -1,0 +1,133 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1356"
+  height="212"
+  viewBox="0 0 1356 212"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">RemoteTeamPro</title>
+  <desc id="desc">RemoteTeamPro ASCII terminal logo with animated purple light sweep</desc>
+
+  <defs>
+
+    <!-- =========================================================
+         REMOTE TEAM PRO — ASCII BLOCK DESIGN
+         Fixed monospace layout
+         ========================================================= -->
+
+    <g
+      id="ascii"
+      font-family="Courier New, Consolas, 'Liberation Mono', monospace"
+      font-size="17px"
+      font-weight="700"
+      letter-spacing="0"
+      xml:space="preserve"
+    >
+
+      <text x="18" y="42">88888888ba                                                             888888888888                                         88888888ba                            
+</text>
+      <text x="18" y="61">88      "8b                                               ,d                88                                              88      "8b                           
+</text>
+      <text x="18" y="80">88      ,8P                                               88                88                                              88      ,8P                           
+</text>
+      <text x="18" y="99">88aaaaaa8P'  ,adPPYba,  88,dPYba,,adPYba,    ,adPPYba,  MM88MMM  ,adPPYba,  88   ,adPPYba,  ,adPPYYba,  88,dPYba,,adPYba,   88aaaaaa8P'  8b,dPPYba,   ,adPPYba,   
+</text>
+      <text x="18" y="118">88""""88'   a8P_____88  88P'   "88"    "8a  a8"     "8a   88    a8P_____88  88  a8P_____88  ""     `Y8  88P'   "88"    "8a  88""""""'    88P'   "Y8  a8"     "8a  
+</text>
+      <text x="18" y="137">88    `8b   8PP"""""""  88      88      88  8b       d8   88    8PP"""""""  88  8PP"""""""  ,adPPPPP88  88      88      88  88           88          8b       d8  
+</text>
+      <text x="18" y="137">88     `8b  "8b,   ,aa  88      88      88  "8a,   ,a8"   88,   "8b,   ,aa  88  "8b,   ,aa  88,    ,88  88      88      88  88           88          "8a,   ,a8"  
+</text>
+      <text x="18" y="137">88      `8b  `"Ybbd8"'  88      88      88   `"YbbdP"'    "Y888  `"Ybbd8"'  88   `"Ybbd8"'  `"8bbdP"Y8  88      88      88  88           88           `"YbbdP"'   
+</text>
+
+    </g>
+
+
+    <!-- =========================================================
+         MASK — EXACT SAME ASCII GEOMETRY
+         ========================================================= -->
+
+    <mask
+      id="asciiMask"
+      maskUnits="userSpaceOnUse"
+      x="0"
+      y="0"
+      width="1356"
+      height="212"
+    >
+      <rect
+        x="0"
+        y="0"
+        width="1356"
+        height="212"
+        fill="black"
+      />
+
+      <use
+        href="#ascii"
+        fill="white"
+      />
+    </mask>
+
+
+    <!-- =========================================================
+         PURPLE TERMINAL LIGHT SWEEP
+         ========================================================= -->
+
+    <linearGradient
+      id="sweep"
+      gradientUnits="userSpaceOnUse"
+      x1="0"
+      y1="0"
+      x2="420"
+      y2="0"
+    >
+      <stop offset="0%"   stop-color="#7C3AED"/>
+      <stop offset="38%"  stop-color="#7C3AED"/>
+      <stop offset="47%"  stop-color="#A78BFA"/>
+      <stop offset="50%"  stop-color="#FFFFFF"/>
+      <stop offset="53%"  stop-color="#C4B5FD"/>
+      <stop offset="62%"  stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+
+  </defs>
+
+
+  <!-- =========================================================
+       BASE ASCII
+       ========================================================= -->
+
+  <use
+    href="#ascii"
+    fill="#A78BFA"
+  />
+
+
+  <!-- =========================================================
+       ANIMATED LIGHT PASS
+       ========================================================= -->
+
+  <g mask="url(#asciiMask)">
+
+    <rect
+      x="-420"
+      y="0"
+      width="420"
+      height="212"
+      fill="url(#sweep)"
+    >
+      <animate
+        attributeName="x"
+        from="-420"
+        to="1356"
+        dur="4.2s"
+        repeatCount="indefinite"
+      />
+    </rect>
+
+  </g>
+
+</svg>
