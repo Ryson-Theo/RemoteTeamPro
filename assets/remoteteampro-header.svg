@@ -5,7 +5,7 @@
 
   <defs>
 
-    <!-- Slow purple ambient sweep -->
+    <!-- Slow purple ambient sweep --> 
     <linearGradient id="purpleAmbient"
                     x1="-500"
                     y1="0"
