@@ -1,244 +1,1064 @@
-# RemoteTeamPro
+<p align="center">
+  <img
+    src="./assets/remoteteampro-header.svg"
+    width="100%"
+    alt="RemoteTeamPro"
+  />
+</p>
 
-**A lightweight, self-hosted Remote Team Management System** — built with PHP & MySQL for small to medium teams.  
-Centralizes project coordination, task tracking, attendance & timesheets, internal messaging, notifications, client portals, and basic reporting — all without subscriptions or cloud dependency.
+<p align="center">
+  <strong>A lightweight, self-hosted Remote Team Management System</strong>
+  <br>
+  Built with PHP, MySQL, HTML, CSS and JavaScript for small to medium teams.
+</p>
 
-Run it locally with XAMPP or on any shared LAMP/LEMP host.
+<p align="center">
+  <a href="https://github.com/Ryson-Theo/RemoteTeamPro">
+    <img src="https://img.shields.io/badge/Repository-RemoteTeamPro-181717?style=flat&logo=github" alt="GitHub Repository">
+  </a>
+  <a href="https://www.php.net/">
+    <img src="https://img.shields.io/badge/PHP-7.4%2B-777BB4?style=flat&logo=php&logoColor=white" alt="PHP">
+  </a>
+  <a href="https://www.mysql.com/">
+    <img src="https://img.shields.io/badge/MySQL-5.7%2B-4479A1?style=flat&logo=mysql&logoColor=white" alt="MySQL">
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License">
+  </a>
+</p>
 
-[![PHP](https://img.shields.io/badge/PHP-7.4%2B-777BB4?style=flat&logo=php)](https://php.net)  
-[![MySQL](https://img.shields.io/badge/MySQL-5.7%2B-4479A1?style=flat&logo=mysql)](https://mysql.com)  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+  Centralizes project coordination, task tracking, attendance & timesheets,
+  internal messaging, notifications, client portals and reporting —
+  without requiring a subscription or cloud dependency.
+</p>
 
-[Key Features](#-key-features) • [Technology Stack](#-technology-stack) • [User Roles](#-user-roles--functionalities) • [Installation](#-installation-and-configuration) • [Usage](#-usage) • [API Documentation](#-api-documentation) • [Troubleshooting](#-troubleshoot) • [Contributing](#-contributing) • [Contributors](#-contributors) • [License](#license)
+<p align="center">
+  <a href="#key-features">Features</a>
+  •
+  <a href="#screenshots">Screenshots</a>
+  •
+  <a href="#architecture">Architecture</a>
+  •
+  <a href="#technology-stack">Stack</a>
+  •
+  <a href="#installation-and-configuration">Installation</a>
+  •
+  <a href="#api-documentation">API</a>
+  •
+  <a href="#troubleshooting">Troubleshooting</a>
+  •
+  <a href="#contributors">Contributors</a>
+</p>
+
+---
+
+## Overview
+
+**RemoteTeamPro** is a self-hosted remote team management system designed to bring common team operations into one application.
+
+It provides role-based dashboards for:
+
+* Administrators
+* Managers
+* Employees
+* Clients
+
+The system combines project and task management with attendance, timesheets, internal communication, notifications, client access and report generation.
+
+It can be run locally using **XAMPP** or deployed to a compatible **LAMP/LEMP** environment.
+
+---
 
 ## Screenshots
-![Home / Landing Page](screenshots/home-landing-page.png)  
-*Home / Landing Page – Welcome screen with login/register options*
 
-![Admin Dashboard Overview](screenshots/admin-dashboard.png)
-*Admin dashboard with analytics, user management, and reports*
+The interface is presented below as a gallery: each screenshot is paired with its corresponding functionality for easier visual scanning.
 
-![Manager Project Management](screenshots/manager-projects.png)
-*Manager view: creating projects, assigning tasks, monitoring team progress*
+<table>
+  <tr>
+    <td width="56%" align="center" valign="middle">
+      <img
+        src="./screenshots/home-landing-page.png"
+        width="500"
+        alt="RemoteTeamPro Home and Landing Page"
+      />
+    </td>
+    <td width="44%" valign="middle">
+      <h3>Home / Landing Page</h3>
+      <p>
+        Entry point for the application with authentication and registration
+        options for users.
+      </p>
+      <sub>Authentication entry • Registration • Responsive landing interface</sub>
+    </td>
+  </tr>
+</table>
 
-![Employee Task & Timesheet](screenshots/employee-tasks-timesheet.png)
-*Employee interface: updating task status, logging attendance & hours*
+<br>
 
-![Client Project Timeline](screenshots/client-timeline.png)
-*Client portal: viewing milestones, downloading reports, messaging manager*
+<table>
+  <tr>
+    <td width="56%" align="center" valign="middle">
+      <img
+        src="./screenshots/admin-dashboard.png"
+        width="500"
+        alt="RemoteTeamPro Admin Dashboard"
+      />
+    </td>
+    <td width="44%" valign="middle">
+      <h3>Admin Dashboard</h3>
+      <p>
+        Central administration interface for analytics, user management,
+        companies, projects, reports and system-level configuration.
+      </p>
+      <sub>Analytics • User management • Reports • Administration</sub>
+    </td>
+  </tr>
+</table>
 
-## ✨ Key Features
+<br>
 
-- **Role-Based Access Control (RBAC)** — Four roles: Admin, Manager, Employee, Client — each with tailored dashboards and strict permissions  
-- **User Management** — Secure registration with OTP email verification, password reset, profile picture upload, activity logging  
-- **Project & Task Management** — Create projects, assign tasks with deadlines, track real-time progress and status updates  
-- **Attendance & Timesheets** — Check-in/out logging, task-linked hours, manager review, automatic cron-based checkout for open sessions  
-- **Internal Messaging** — Role-aware conversations, send/fetch messages, mark as read, auto-seeded conversations for new users  
-- **Notifications** — In-app alerts + email notifications for tasks, deadlines, messages (via PHPMailer)  
-- **Client Portal** — Project timelines, milestone tracking, report downloads, direct manager communication  
-- **Reporting** — Generate and export PDF reports (Dompdf), timesheet exports, performance analytics  
-- **Advanced Auth** — OTP flows for login, registration, password reset, email change verification  
-- **Responsive & Clean UI** — Works on desktop, tablet, mobile
+<table>
+  <tr>
+    <td width="56%" align="center" valign="middle">
+      <img
+        src="./screenshots/manager-projects.png"
+        width="500"
+        alt="RemoteTeamPro Manager Project Management"
+      />
+    </td>
+    <td width="44%" valign="middle">
+      <h3>Manager Project Management</h3>
+      <p>
+        Managers can create projects, assign tasks, monitor progress,
+        review team activity and coordinate work.
+      </p>
+      <sub>Projects • Tasks • Assignments • Progress tracking</sub>
+    </td>
+  </tr>
+</table>
 
-## 💻 Technology Stack
+<br>
 
-- **Backend** — PHP (7.4+ recommended)  
-- **Database** — MySQL / MariaDB  
-- **Frontend** — HTML5, CSS3, JavaScript (vanilla + custom loaders & notification scripts)  
-- **Libraries**  
-  - PHPMailer — reliable email / OTP delivery  
-  - Dompdf — PDF report generation  
-- **Tools** — Composer for dependency management, XAMPP for local development  
-- **Server** — Apache (XAMPP) or any LAMP/LEMP stack
+<table>
+  <tr>
+    <td width="56%" align="center" valign="middle">
+      <img
+        src="./screenshots/employee-tasks-timesheet.png"
+        width="500"
+        alt="RemoteTeamPro Employee Tasks and Timesheet"
+      />
+    </td>
+    <td width="44%" valign="middle">
+      <h3>Employee Tasks & Timesheets</h3>
+      <p>
+        Employees can manage assigned work, update task status,
+        record attendance and log task-related working hours.
+      </p>
+      <sub>Tasks • Attendance • Timesheets • Work hours</sub>
+    </td>
+  </tr>
+</table>
 
-## 👥 User Roles & Functionalities
+<br>
+
+<table>
+  <tr>
+    <td width="56%" align="center" valign="middle">
+      <img
+        src="./screenshots/client-timeline.png"
+        width="500"
+        alt="RemoteTeamPro Client Project Timeline"
+      />
+    </td>
+    <td width="44%" valign="middle">
+      <h3>Client Project Portal</h3>
+      <p>
+        Clients can follow project timelines and milestones,
+        access reports and communicate directly with the assigned manager.
+      </p>
+      <sub>Project timelines • Milestones • Reports • Messaging</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
+## Key Features
+
+### Role-Based Access Control
+
+Four application roles with separate responsibilities and permissions:
+
+* **Admin**
+* **Manager**
+* **Employee**
+* **Client**
+
+### User Management
+
+* OTP email verification
+* Registration and authentication
+* Password reset
+* Email change verification
+* Profile picture upload
+* Activity logging
+
+### Project & Task Management
+
+* Create and manage projects
+* Create and assign tasks
+* Task deadlines
+* Status updates
+* Progress tracking
+* Manager-based team coordination
+
+### Attendance & Timesheets
+
+* Employee check-in / check-out
+* Task-linked working hours
+* Attendance history
+* Manager review
+* Automatic checkout for unfinished sessions
+* Cron-based attendance processing
+
+### Internal Messaging
+
+* Role-aware conversations
+* Send and fetch messages
+* Conversation listing
+* Read/unread status
+* Automatically seeded conversations for new users
+
+### Notifications
+
+* In-app notifications
+* Email notifications
+* Task-related alerts
+* Deadline notifications
+* Messaging notifications
+* PHPMailer-based email delivery
+
+### Client Portal
+
+* Project timelines
+* Milestone tracking
+* Project progress
+* Report downloads
+* Direct manager communication
+
+### Reporting
+
+* Generate project reports
+* Generate timesheet reports
+* PDF exports
+* Email reports
+* Performance analytics
+
+### Authentication
+
+OTP-based flows are supported for:
+
+* Login
+* Registration
+* Password reset
+* Email change verification
+
+### Responsive Interface
+
+The interface is designed to work across:
+
+* Desktop
+* Tablet
+* Mobile
+
+---
+
+## Architecture
+
+```mermaid
+flowchart LR
+
+    U[Users]
+
+    subgraph FRONTEND["Frontend"]
+        UI[HTML5 / CSS3 / JavaScript]
+        TW[Tailwind CSS]
+        CH[Chart.js]
+    end
+
+    subgraph BACKEND["PHP Application"]
+        API[REST-like API]
+        AUTH[Authentication & RBAC]
+        PROJECTS[Projects & Tasks]
+        ATTEND[Attendance & Timesheets]
+        MSG[Messaging & Notifications]
+        REPORTS[Reports]
+    end
+
+    DB[(MySQL / MariaDB)]
+
+    MAIL[PHPMailer / SMTP]
+    PDF[Dompdf]
+    CRON[Cron Auto-Checkout]
+
+    U --> UI
+    UI --> API
+    TW --> UI
+    CH --> UI
+
+    API --> AUTH
+    API --> PROJECTS
+    API --> ATTEND
+    API --> MSG
+    API --> REPORTS
+
+    AUTH --> DB
+    PROJECTS --> DB
+    ATTEND --> DB
+    MSG --> DB
+    REPORTS --> DB
+
+    AUTH --> MAIL
+    MSG --> MAIL
+    REPORTS --> PDF
+
+    CRON --> ATTEND
+```
+
+### Request Flow
+
+```text
+User
+  │
+  ▼
+Frontend UI
+  │
+  ▼
+PHP API
+  │
+  ├── Authentication / RBAC
+  ├── Projects & Tasks
+  ├── Attendance / Timesheets
+  ├── Messaging
+  └── Reports
+        │
+        ▼
+   MySQL / MariaDB
+
+Supporting services:
+  ├── PHPMailer → SMTP / Email
+  ├── Dompdf    → PDF Reports
+  └── Cron      → Attendance Auto-Checkout
+```
+
+---
+
+## Project Structure
+
+```text
+RemoteTeamPro/
+│
+├── backend/
+│   ├── api/
+│   │   ├── auth/
+│   │   ├── attendance/
+│   │   ├── messages/
+│   │   ├── reports/
+│   │   ├── dashboard/
+│   │   ├── profile/
+│   │   ├── users.php
+│   │   └── projects.php
+│   │
+│   ├── config/
+│   └── logs/
+│
+├── database/
+│   └── schema.sql
+│
+├── frontend/
+│
+├── screenshots/
+│   ├── home-landing-page.png
+│   ├── admin-dashboard.png
+│   ├── manager-projects.png
+│   ├── employee-tasks-timesheet.png
+│   └── client-timeline.png
+│
+├── templates/
+│   └── email/
+│
+├── assets/
+│   └── remoteteampro-header.svg
+│
+├── composer.json
+├── composer.lock
+├── .gitignore
+└── README.md
+```
+
+---
+
+## Technology Stack
+
+| Layer                 | Technology              |
+| --------------------- | ----------------------- |
+| Backend               | PHP 7.4+                |
+| Database              | MySQL / MariaDB         |
+| Frontend              | HTML5, CSS3, JavaScript |
+| Styling               | Tailwind CSS            |
+| Charts                | Chart.js                |
+| Email                 | PHPMailer               |
+| PDF Generation        | Dompdf                  |
+| Dependency Management | Composer                |
+| Local Development     | XAMPP                   |
+| Web Server            | Apache                  |
+| Compatible Hosting    | LAMP / LEMP             |
+
+---
+
+## User Roles & Functionalities
 
 ### Admin
-- Full control: manage users, companies, projects, settings  
-- View activity logs, handle contact requests, generate reports  
-- System configuration (SMTP, notifications, etc.)
+
+* Full control over users, companies, projects and settings
+* View activity logs
+* Handle contact requests
+* Generate reports
+* Configure SMTP and notification settings
 
 ### Manager
-- Create/assign projects & tasks, monitor team progress  
-- Review attendance, timesheets, client requests  
-- Communicate with employees and clients
+
+* Create and assign projects
+* Create and assign tasks
+* Monitor team progress
+* Review attendance and timesheets
+* Review client requests
+* Communicate with employees and clients
 
 ### Employee
-- View & update assigned tasks/projects  
-- Log daily attendance and task hours  
-- Send/receive messages, manage profile
+
+* View assigned projects and tasks
+* Update task status
+* Log daily attendance
+* Record task hours
+* Send and receive messages
+* Manage personal profile
 
 ### Client
-- View assigned project timelines and progress  
-- Download reports/PDFs  
-- Direct messaging with assigned manager  
-- Receive automated notifications
 
-## 🛠️ Installation and Configuration
+* View assigned project timelines
+* Track project progress
+* View milestones
+* Download reports and PDFs
+* Communicate with assigned manager
+* Receive automated notifications
+
+---
+
+## Installation and Configuration
 
 ### Prerequisites
-- XAMPP (Apache + MySQL + PHP ≥7.4)  
-- Composer  
-- Git (optional)  
-- VS Code or any code editor
 
-1. **Clone / Extract the project**  
-   Place the folder in your web root (e.g. `C:\xampp\htdocs\RemoteTeamPro`)
+Install the following before running the project:
 
-   ```bash
-   git clone https://github.com/yourusername/RemoteTeamPro.git
-   ```
+* XAMPP — Apache + MySQL + PHP ≥ 7.4
+* Composer
+* Git
+* VS Code or another code editor
 
-2. **Install dependencies**
+### 1. Clone the Repository
 
-   ```bash
-   composer install
-   ```
-
-3. **Database Setup**
-
-   - Start Apache & MySQL in XAMPP  
-   - Open http://localhost/phpmyadmin  
-   - Create a new database (e.g. `remoteteampro`)  
-   - Import `database/schema.sql`
-
-4. **Configure the application**
-
-   - Edit `backend/config/database.php` — set DB host, username, password, database name  
-   - Edit `backend/config/smtp.php` — configure Gmail / SMTP credentials (App Password recommended for Gmail)  
-   - Make sure `uploads/profile_pictures/` is writable (chmod 755 or 775)
-
-5. **Launch**
-
-   Open browser:  
-   http://localhost/RemoteTeamPro
-
-   Complete initial setup (create first company/admin via the UI).
-
-For production: secure config files, enable HTTPS, harden permissions.
-
-## 🚀 Usage
-
-- Start XAMPP (Apache + MySQL)  
-- Go to http://localhost/RemoteTeamPro  
-- Register a new account (OTP verification required) or log in  
-- Create a company → invite users → start managing projects/tasks
-
-**Cron Job (recommended)**  
-Schedule auto-checkout for unfinished attendance:
+Place the project inside your XAMPP web root.
 
 ```bash
-# Example: run every day at midnight
+cd C:\xampp\htdocs
+
+git clone https://github.com/Ryson-Theo/RemoteTeamPro.git
+
+cd RemoteTeamPro
+```
+
+Alternatively, download and extract the repository directly into:
+
+```text
+C:\xampp\htdocs\RemoteTeamPro
+```
+
+### 2. Install PHP Dependencies
+
+```bash
+composer install
+```
+
+### 3. Start XAMPP
+
+Start:
+
+```text
+Apache
+MySQL
+```
+
+### 4. Create the Database
+
+Open:
+
+```text
+http://localhost/phpmyadmin
+```
+
+Create a database:
+
+```text
+remoteteampro
+```
+
+Then import:
+
+```text
+database/schema.sql
+```
+
+### 5. Configure Database Connection
+
+Edit:
+
+```text
+backend/config/database.php
+```
+
+Configure:
+
+```text
+Database host
+Database username
+Database password
+Database name
+```
+
+### 6. Configure SMTP
+
+Edit:
+
+```text
+backend/config/smtp.php
+```
+
+Configure the required SMTP credentials.
+
+For Gmail, an **App Password** is recommended where applicable.
+
+### 7. Configure Upload Permissions
+
+Make sure the profile picture upload directory is writable:
+
+```text
+uploads/profile_pictures/
+```
+
+Typical permissions:
+
+```text
+755
+```
+
+or
+
+```text
+775
+```
+
+### 8. Launch
+
+Open:
+
+```text
+http://localhost/RemoteTeamPro
+```
+
+Complete the initial setup through the application UI.
+
+For production deployments:
+
+* Secure configuration files
+* Enable HTTPS
+* Harden filesystem permissions
+* Protect SMTP credentials
+* Add rate limiting
+* Review authentication and API security
+
+---
+
+## Usage
+
+### Start the Application
+
+Start Apache and MySQL through XAMPP.
+
+Then open:
+
+```text
+http://localhost/RemoteTeamPro
+```
+
+### Authentication
+
+Register a new account or log in with an existing account.
+
+OTP verification is required for supported authentication flows.
+
+### Create a Company
+
+After authentication:
+
+```text
+Create Company
+      ↓
+Invite / Manage Users
+      ↓
+Create Projects
+      ↓
+Create & Assign Tasks
+      ↓
+Track Progress
+      ↓
+Attendance / Timesheets
+      ↓
+Reports & Communication
+```
+
+---
+
+## Cron Job
+
+RemoteTeamPro includes an automatic checkout endpoint for unfinished attendance sessions.
+
+Recommended scheduling:
+
+```bash
+# Run every day at midnight
 0 0 * * * /usr/bin/php /path/to/RemoteTeamPro/backend/api/attendance/auto-checkout-cron.php
 ```
 
-## 🔌 API Documentation
+This can be configured through the operating system's cron scheduler.
 
-The backend exposes REST-like endpoints in `backend/api/`. All endpoints require authentication (session or OTP) and use JSON for requests/responses. Base URL: `/RemoteTeamPro/backend/api/`.
+---
 
-Endpoints are grouped by category. Use POST for most actions. Always include CSRF token where applicable.
+# API Documentation
 
-### Auth Endpoints
-Handles login, registration, OTP verification, password reset, etc.
+The backend exposes REST-like endpoints through:
 
-| Endpoint | Method | Description | Parameters | Response |
-|----------|--------|-------------|------------|----------|
-| `auth/login.php` | POST | User login | `email`, `password` | `{ "success": true, "user": {...} }` or error |
-| `auth/register.php` | POST | Register new user | `email`, `password`, `role` | Success with OTP sent |
-| `auth/verify-otp.php` | POST | Verify OTP | `otp`, `email` | `{ "verified": true }` |
-| `auth/forgot-password.php` | POST | Request password reset | `email` | OTP sent |
-| `auth/reset-password.php` | POST | Reset password | `otp`, `new_password` | Success |
-| `auth/logout.php` | POST | Logout user | None | `{ "logged_out": true }` |
-| `auth/change-email.php` | POST | Change email | `new_email` | OTP sent for verification |
+```text
+backend/api/
+```
 
-### Attendance Endpoints
-For logging and managing attendance/timesheets.
+Base URL for local development:
 
-| Endpoint | Method | Description | Parameters | Response |
-|----------|--------|-------------|------------|----------|
-| `attendance/attendance-employee.php` | POST | Employee check-in/out | `action: 'checkin' or 'checkout'`, `task_id` (optional) | `{ "status": "checked_in" }` |
-| `attendance/attendance-manager.php` | GET | Manager view timesheets | `employee_id` (optional) | Array of timesheets |
-| `attendance/auto-checkout-cron.php` | GET | Auto-checkout open sessions (cron) | None | Success log |
+```text
+/RemoteTeamPro/backend/api/
+```
 
-### Messages Endpoints
-For internal chat and notifications.
+Requests and responses use JSON where applicable.
 
-| Endpoint | Method | Description | Parameters | Response |
-|----------|--------|-------------|------------|----------|
-| `messages/send_message.php` | POST | Send message | `conversation_id`, `message` | `{ "sent": true }` |
-| `messages/fetch_messages.php` | GET | Fetch chat history | `conversation_id` | Array of messages |
-| `messages/fetch_conversations.php` | GET | List conversations | None | Array of conversations |
-| `messages/mark_read.php` | POST | Mark message read | `message_id` | Success |
+Authentication is handled through the application's session/authentication flow.
 
-### Reports Endpoints
-For generating and exporting reports.
+Always include CSRF protection where applicable.
 
-| Endpoint | Method | Description | Parameters | Response |
-|----------|--------|-------------|------------|----------|
-| `reports/generate-report.php` | POST | Generate report | `type: 'timesheet' or 'project'`, `filters` | Report data |
-| `reports/export-pdf.php` | GET | Export as PDF | `report_id` | PDF file download |
-| `reports/send-report-mail.php` | POST | Email report | `report_id`, `email` | Success |
+---
 
-### Other Endpoints
-- `users.php` (GET/POST): Manage users (list/create/update)  
-- `projects.php` (GET/POST): Manage projects/tasks  
-- `dashboard/admin-dashboard.php` (GET): Admin stats  
-- `profile/upload_profile_picture.php` (POST): Upload avatar  
-- Full list: See `backend/api/` directory for all files.
+## Authentication Endpoints
 
-**Notes:**  
-- Authentication: Use session cookie after login.  
-- Error Handling: Responses include `{ "error": "message", "code": 400 }`.  
-- Rate Limiting: Not implemented; add in production.  
-- Testing: Use Postman with base URL `http://localhost/RemoteTeamPro/backend/api/`.  
-For full OpenAPI spec, generate with Swagger (future enhancement).
+| Endpoint                   | Method | Description            | Parameters                  |
+| -------------------------- | ------ | ---------------------- | --------------------------- |
+| `auth/login.php`           | POST   | User login             | `email`, `password`         |
+| `auth/register.php`        | POST   | Register user          | `email`, `password`, `role` |
+| `auth/verify-otp.php`      | POST   | Verify OTP             | `otp`, `email`              |
+| `auth/forgot-password.php` | POST   | Request password reset | `email`                     |
+| `auth/reset-password.php`  | POST   | Reset password         | `otp`, `new_password`       |
+| `auth/logout.php`          | POST   | Logout user            | None                        |
+| `auth/change-email.php`    | POST   | Change email           | `new_email`                 |
 
-## ⚠️ Troubleshoot
+Example successful login response:
 
-**Email / OTP not sending**  
-Causes & Fixes:  
-1. Wrong Gmail address or App Password in `backend/config/smtp.php`  
-2. Gmail blocked "less secure apps" — use App Password  
-3. Run `composer update && composer install` if PHPMailer issues persist  
+```json
+{
+  "success": true,
+  "user": {}
+}
+```
 
-**Database connection error / Uncaught mysqli_sql_exception**  
-Causes & Fixes:  
-1. MySQL service stopped → start it in XAMPP  
-2. Wrong credentials in `backend/config/database.php`  
-3. Database not created or schema not imported  
+---
 
-**Pages not loading / blank**  
-Causes & Fixes:  
-1. PHP version < 7.4 → upgrade XAMPP  
-2. Missing `vendor/` folder → run `composer install` again  
-3. Check `backend/logs/` for detailed PHP errors
+## Attendance Endpoints
 
-## 🤝 Contributing
+| Endpoint                             | Method | Description                 | Parameters          |
+| ------------------------------------ | ------ | --------------------------- | ------------------- |
+| `attendance/attendance-employee.php` | POST   | Employee check-in/out       | `action`, `task_id` |
+| `attendance/attendance-manager.php`  | GET    | Manager timesheet view      | `employee_id`       |
+| `attendance/auto-checkout-cron.php`  | GET    | Auto-checkout open sessions | None                |
 
-Contributions are welcome!  
-- Fork the repo  
-- Create your feature branch (`git checkout -b feature/amazing-feature`)  
-- Commit your changes (`git commit -m 'Add amazing feature'`)  
-- Push to the branch (`git push origin feature/amazing-feature`)  
-- Open a Pull Request  
+Example:
 
-Please update documentation / schema if needed.
+```text
+action = checkin
+```
 
-## 🙏 Acknowledgements
+or:
 
-- PHPMailer — powerful email library  
-- Dompdf — clean PDF generation  
-- Tailwind CSS & Chart.js — modern styling & visuals (if used)
+```text
+action = checkout
+```
 
-## 👥 Contributors
+---
 
-Big thanks to the core team:
+## Messaging Endpoints
 
-- [Ribin K Roy](https://github.com/Ryson-Theo) — Main Contributor  
-- [Kevin Cyriac](https://github.com/kevincyriac-2005) — Co-Developer  
+| Endpoint                           | Method | Description                 | Parameters                   |
+| ---------------------------------- | ------ | --------------------------- | ---------------------------- |
+| `messages/send_message.php`        | POST   | Send message                | `conversation_id`, `message` |
+| `messages/fetch_messages.php`      | GET    | Fetch conversation messages | `conversation_id`            |
+| `messages/fetch_conversations.php` | GET    | List conversations          | None                         |
+| `messages/mark_read.php`           | POST   | Mark message as read        | `message_id`                 |
+
+Example:
+
+```json
+{
+  "sent": true
+}
+```
+
+---
+
+## Reporting Endpoints
+
+| Endpoint                       | Method | Description          | Parameters           |
+| ------------------------------ | ------ | -------------------- | -------------------- |
+| `reports/generate-report.php`  | POST   | Generate report      | `type`, `filters`    |
+| `reports/export-pdf.php`       | GET    | Export report as PDF | `report_id`          |
+| `reports/send-report-mail.php` | POST   | Email report         | `report_id`, `email` |
+
+Supported report types include:
+
+```text
+timesheet
+project
+```
+
+---
+
+## Other Endpoints
+
+```text
+users.php
+```
+
+Manage users.
+
+```text
+projects.php
+```
+
+Manage projects and tasks.
+
+```text
+dashboard/admin-dashboard.php
+```
+
+Retrieve administrator dashboard statistics.
+
+```text
+profile/upload_profile_picture.php
+```
+
+Upload a profile avatar.
+
+For the complete endpoint list, inspect:
+
+```text
+backend/api/
+```
+
+---
+
+## API Notes
+
+### Authentication
+
+Authenticated requests use the application session after login.
+
+### Error Handling
+
+Responses may include:
+
+```json
+{
+  "error": "message",
+  "code": 400
+}
+```
+
+### Rate Limiting
+
+Rate limiting is currently **not implemented**.
+
+For production use, add appropriate API and authentication rate limiting.
+
+### API Testing
+
+API endpoints can be tested using Postman.
+
+Local base URL:
+
+```text
+http://localhost/RemoteTeamPro/backend/api/
+```
+
+### OpenAPI / Swagger
+
+A full OpenAPI/Swagger specification is a planned future enhancement.
+
+---
+
+## Security Considerations
+
+RemoteTeamPro currently includes several security-oriented application flows:
+
+* Role-based access control
+* OTP verification
+* Password reset flow
+* Email change verification
+* Session-based authentication
+* CSRF protection where applicable
+* Permission-aware dashboards
+* SMTP-based email delivery
+
+However, this project should not be described as a hardened enterprise deployment.
+
+Before production use, review:
+
+* Rate limiting
+* Authentication hardening
+* Session configuration
+* File upload validation
+* Database permissions
+* HTTPS
+* Secret management
+* Error exposure
+* Server permissions
+* API authorization
+
+---
+
+## Troubleshooting
+
+### Email / OTP Not Sending
+
+Check:
+
+```text
+backend/config/smtp.php
+```
+
+Verify:
+
+1. SMTP credentials are correct.
+2. Gmail App Password is configured where required.
+3. PHPMailer dependencies are installed.
+
+If dependency issues persist:
+
+```bash
+composer update
+composer install
+```
+
+### Database Connection Error
+
+If you see:
+
+```text
+mysqli_sql_exception
+```
+
+Check:
+
+1. MySQL is running in XAMPP.
+2. Database credentials are correct.
+3. The `remoteteampro` database exists.
+4. `database/schema.sql` has been imported.
+
+### Blank Pages / Pages Not Loading
+
+Check:
+
+1. PHP version is 7.4 or newer.
+2. Composer dependencies exist.
+3. `vendor/` was created successfully.
+4. Application logs for PHP errors.
+
+If required:
+
+```bash
+composer install
+```
+
+---
+
+## Contributing
+
+Contributions are welcome.
+
+### Development Flow
+
+```bash
+git clone https://github.com/Ryson-Theo/RemoteTeamPro.git
+
+cd RemoteTeamPro
+
+git checkout -b feature/your-feature
+```
+
+Make your changes, test locally and commit:
+
+```bash
+git add .
+
+git commit -m "Add your feature"
+```
+
+Push the branch:
+
+```bash
+git push origin feature/your-feature
+```
+
+Then open a Pull Request.
+
+When modifying functionality, update the relevant documentation or database schema where required.
+
+---
+
+## Acknowledgements
+
+RemoteTeamPro uses and builds upon several open-source tools and libraries:
+
+* **PHPMailer** — email and OTP delivery
+* **Dompdf** — PDF report generation
+* **Tailwind CSS** — interface styling
+* **Chart.js** — data visualization
+* **Composer** — PHP dependency management
+* **XAMPP** — local Apache/MySQL development environment
+
+---
+
+# Contributors
+
+<p align="center">
+  <strong>Built collaboratively by</strong>
+</p>
+
+<table align="center">
+  <tr>
+    <td align="center" width="260">
+      <a href="https://github.com/Ryson-Theo">
+        <img
+          src="https://github.com/Ryson-Theo.png?size=240"
+          width="130"
+          height="130"
+          alt="Ribin K Roy"
+        />
+      </a>
+      <br>
+      <br>
+      <strong>
+        <a href="https://github.com/Ryson-Theo">Ribin K Roy</a>
+      </strong>
+      <br>
+      <sub>Main Contributor</sub>
+      <br>
+      <br>
+      <a href="https://github.com/Ryson-Theo">
+        <img
+          src="https://img.shields.io/badge/GitHub-Ryson--Theo-181717?style=flat&logo=github"
+          alt="Ribin K Roy GitHub"
+        />
+      </a>
+    </td>
+
+
+
+<td width="60"></td>
+
+<td align="center" width="260">
+  <a href="https://github.com/kevincyriac-2005">
+    <img
+      src="https://github.com/kevincyriac-2005.png?size=240"
+      width="130"
+      height="130"
+      alt="Kevin Cyriac"
+    />
+  </a>
+  <br>
+  <br>
+  <strong>
+    <a href="https://github.com/kevincyriac-2005">Kevin Cyriac</a>
+  </strong>
+  <br>
+  <sub>Co-Developer</sub>
+  <br>
+  <br>
+  <a href="https://github.com/kevincyriac-2005">
+    <img
+      src="https://img.shields.io/badge/GitHub-kevincyriac--2005-181717?style=flat&logo=github"
+      alt="Kevin Cyriac GitHub"
+    />
+  </a>
+</td>
+
+
+  </tr>
+</table>
+
+<p align="center">
+  <sub>
+    Click either profile image or GitHub badge to visit the contributor's profile.
+  </sub>
+</p>
+
+---
+
+## Project Links
+
+<p align="center">
+
+<a href="https://github.com/Ryson-Theo/RemoteTeamPro">
+  <img src="https://img.shields.io/badge/View%20Source-GitHub-181717?style=for-the-badge&logo=github" alt="View Source">
+</a>
+
+ 
+
+<a href="https://ryson-theo.github.io/RemoteTeamPro/">
+  <img src="https://img.shields.io/badge/Demo-GitHub%20Pages-222222?style=for-the-badge&logo=githubpages" alt="Demo">
+</a>
+
+</p>
+
+> **Demo note:** The GitHub Pages deployment serves as a project/demo preview. The complete PHP + MySQL application is intended to run in a PHP-compatible server environment such as XAMPP or LAMP/LEMP.
+
+---
 
 ## License
 
-Distributed under the **MIT License**.  
-See [`LICENSE`](LICENSE) for full details.  
-Free to use, modify, and distribute.
+Distributed under the **MIT License**.
+
+See [`LICENSE`](LICENSE) for the complete license text.
+
+Free to use, modify and distribute under the terms of the license.
+
+---
+
+<p align="center">
+  <sub>RemoteTeamPro — self-hosted remote team management built with PHP & MySQL.</sub>
+</p>
